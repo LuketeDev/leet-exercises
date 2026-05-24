@@ -18,21 +18,39 @@ public class ValidAnagram {
 
     // Solution 2 using frequency array with O(N)
     public static boolean isAnagramTwo(String s, String t) {
+        if (s.length() != t.length())
+            return false;
+
         char[] sChars = s.toCharArray();
         char[] tChars = t.toCharArray();
-        int[] count = new int[127]; // ASCII table limit
+        Map<Character, Integer> count = new HashMap<>();
+
         for (char c : sChars) {
-            count[c]++; // Adds count to a seen char
+            count.put(c, count.getOrDefault(c, 0) + 1); // Adds count for a char
         }
+
         for (char c : tChars) {
-            count[c]--; // Removes count of a seen char
-        }
-        // count of each character
-        for (int i : count) {
-            // sChars has a character not in tChars
-            if (i != 0) {
+            int freq = count.getOrDefault(c, 0);
+            if (freq == 0) // If char not in sChars
                 return false;
-            }
+            count.put(c, freq - 1); // Subtract count for the char
+        }
+        return true;
+    }
+
+    // Solution 3 accepting unicode, using frequency array, with O(N)
+    public static boolean isAnagramThree(String s, String t) {
+        if (s.codePointCount(0, s.length()) != t.codePointCount(0, t.length()))
+            return false;
+
+        Map<Integer, Integer> count = new HashMap<>();
+        s.codePoints().forEach(cp -> count.put(cp, count.getOrDefault(cp, 0) + 1));
+
+        for (int cp : t.codePoints().toArray()) {
+            int freq = count.getOrDefault(cp, 0);
+            if (freq == 0)
+                return false;
+            count.put(cp, freq - 1);
         }
         return true;
     }
