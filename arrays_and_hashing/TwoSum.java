@@ -7,7 +7,7 @@ import java.util.Map;
 public class TwoSum {
     /*
      * Solution 1 with O(n^2)
-     * public static int[] twoSum(int[] nums, int target) {
+     * public static int[] twoSumOne(int[] nums, int target) {
      * int[] solution = { -1, -1 };
      * for (int i = 0; i <= nums.length; i++) {
      * for (int j = i + 1; j < nums.length; j++) {
@@ -22,7 +22,7 @@ public class TwoSum {
      */
 
     // Solution 2 with O(n) using a HashMap
-    public static int[] betterTwoSum(int[] nums, int target) {
+    public static int[] twoSumTwo(int[] nums, int target) {
         Map<Integer, Integer> numsMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
@@ -32,10 +32,5 @@ public class TwoSum {
             numsMap.put(nums[i], i);
         }
         return new int[] {};
-    }
-
-    public static void main(String[] args) {
-        int[] test = { 2, 7, 11, 15 };
-        System.out.println(Arrays.toString(betterTwoSum(test, 9)));
     }
 }

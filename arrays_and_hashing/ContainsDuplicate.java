@@ -1,9 +1,7 @@
 package arrays_and_hashing;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class ContainsDuplicate {
 
@@ -16,10 +14,5 @@ public class ContainsDuplicate {
             visited.add(num);
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        int[] test = { 1, 2, 3, 1 };
-        System.out.println(containsDuplicate(test));
     }
 }
