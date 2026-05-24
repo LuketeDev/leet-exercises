@@ -1,26 +1,25 @@
 package arrays_and_hashing;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class TwoSum {
-    // Solution 1 with O(n^2)
-    public static int[] twoSum(int[] nums, int target) {
-        int[] solution = { -1, -1 };
-        for (int i = 0; i <= nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == target) {
-                    solution[0] = i;
-                    solution[1] = j;
-                }
-            }
-        }
-        return solution;
-    }
+    /*
+     * Solution 1 with O(n^2)
+     * public static int[] twoSum(int[] nums, int target) {
+     * int[] solution = { -1, -1 };
+     * for (int i = 0; i <= nums.length; i++) {
+     * for (int j = i + 1; j < nums.length; j++) {
+     * if (nums[i] + nums[j] == target) {
+     * solution[0] = i;
+     * solution[1] = j;
+     * }
+     * }
+     * }
+     * return solution;
+     * }
+     */
 
     // Solution 2 with O(n) using a HashMap
     public static int[] betterTwoSum(int[] nums, int target) {
@@ -37,6 +36,6 @@ public class TwoSum {
 
     public static void main(String[] args) {
         int[] test = { 2, 7, 11, 15 };
-        System.out.println(Arrays.toString(twoSum(test, 9)));
+        System.out.println(Arrays.toString(betterTwoSum(test, 9)));
     }
 }
