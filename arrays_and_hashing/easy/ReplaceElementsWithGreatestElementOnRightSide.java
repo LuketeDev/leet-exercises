@@ -1,7 +1,5 @@
 package arrays_and_hashing.easy;
 
-import java.util.Arrays;
-
 public class ReplaceElementsWithGreatestElementOnRightSide {
     public int[] replaceElements(int[] arr) {
         int maxVal = -1;
