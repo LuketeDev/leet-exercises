@@ -1,6 +1,5 @@
 package arrays_and_hashing.easy;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
