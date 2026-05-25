@@ -1,4 +1,4 @@
-package arrays_and_hashing;
+package arrays_and_hashing.easy;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,7 +6,7 @@ import java.util.Set;
 public class ContainsDuplicate {
 
     // Solution in O(n)
-    public static boolean containsDuplicate(int[] nums) {
+    public boolean containsDuplicate(int[] nums) {
         Set<Integer> visited = new HashSet<>();
         for (int num : nums) {
             if (!visited.add(num))

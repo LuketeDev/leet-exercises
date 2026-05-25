@@ -1,4 +1,4 @@
-package arrays_and_hashing;
+package arrays_and_hashing.easy;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,7 +8,7 @@ import java.util.Map;
 public class ValidAnagram {
     // Solution 1 with O(N log N)
 
-    public static boolean isAnagramOne(String s, String t) {
+    public boolean isAnagramOne(String s, String t) {
         char[] sChars = s.toCharArray();
         char[] tChars = t.toCharArray();
         Arrays.sort(sChars);
@@ -17,7 +17,7 @@ public class ValidAnagram {
     }
 
     // Solution 2 using frequency array with O(N)
-    public static boolean isAnagramTwo(String s, String t) {
+    public boolean isAnagramTwo(String s, String t) {
         if (s.length() != t.length())
             return false;
 
@@ -39,7 +39,7 @@ public class ValidAnagram {
     }
 
     // Solution 3 accepting unicode, using frequency array, with O(N)
-    public static boolean isAnagramThree(String s, String t) {
+    public boolean isAnagramThree(String s, String t) {
         if (s.codePointCount(0, s.length()) != t.codePointCount(0, t.length()))
             return false;
 
