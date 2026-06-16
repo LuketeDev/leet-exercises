@@ -1,6 +1,5 @@
 package arrays_and_hashing.easy;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class HeightChecker {
