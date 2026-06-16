@@ -1,7 +1,5 @@
 package arrays_and_hashing.easy;
 
-import java.util.Arrays;
-
 public class CheckIfArrayIsSortedAndRotated {
 
     public boolean check(int[] nums) {
