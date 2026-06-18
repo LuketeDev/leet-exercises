@@ -1,6 +1,7 @@
 package arrays_and_hashing.easy;
 
 public class CircularSentence {
+    // Solution 1 with O(n) time and O(1) space
     public boolean isCircularSentence(String sentence) {
         String[] words = sentence.split(" ");
         for (int i = 0; i < words.length; i++) {
